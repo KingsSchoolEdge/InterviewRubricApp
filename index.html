@@ -1,0 +1,69 @@
+### index.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interview Rubric App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1 data-i18n="app.title">Interview Rubric App</h1>
+    <button id="lang-toggle">ES/EN</button>
+  </header>
+
+  <main>
+    <section id="rubric-builder">
+      <h2 data-i18n="builder.title">Rubric Builder</h2>
+      <form id="rubric-form">
+        <div id="criteria-list"></div>
+        <button type="button" id="add-criterion" data-i18n="builder.addCriterion">Add Criterion</button>
+        <button type="submit" data-i18n="builder.saveRubric">Save Rubric</button>
+      </form>
+    </section>
+
+    <section id="interview-scheduler">
+      <h2 data-i18n="schedule.title">Schedule Interview</h2>
+      <form id="schedule-form">
+        <label data-i18n="schedule.selectRubric">Select Rubric</label>
+        <select id="rubric-select"></select>
+        <label data-i18n="schedule.dateTime">Date & Time</label>
+        <input type="datetime-local" id="interview-datetime">
+        <button type="submit" data-i18n="schedule.createSession">Create Session</button>
+      </form>
+    </section>
+
+    <section id="scoring-panel">
+      <h2 data-i18n="score.title">Interview Scoring</h2>
+      <div id="scoring-interface"></div>
+    </section>
+  </main>
+
+  <script src="i18n.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+```
+
+---
+
+### style.css
+
+```css
+/* Basic reset and layout */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Arial, sans-serif; line-height: 1.6; padding: 1rem; }
+header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+section { margin-bottom: 2rem; }
+form { background: #f9f9f9; padding: 1rem; border-radius: 8px; }
+#criteria-list .criterion { display: flex; gap: 0.5rem; margin-bottom: 0.5rem; }
+.criterion input, .criterion textarea, .criterion select { flex: 1; }
+button { background: #007bff; color: #fff; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; }
+button:hover { background: #0056b3; }
+```
+
+---
+
